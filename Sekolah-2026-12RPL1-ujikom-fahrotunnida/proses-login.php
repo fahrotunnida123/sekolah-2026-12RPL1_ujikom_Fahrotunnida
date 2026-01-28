@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
 
     // Hitung apakah datanya ditemukan?
     $cek = mysqli_num_rows($query);
-
+     $hash= password_hash($_POST['password'], PASSWORD_DEFAULT);
     if ($cek > 0) {
         $data = mysqli_fetch_assoc($query);
 
